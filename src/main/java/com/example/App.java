@@ -29,7 +29,7 @@ public class App {
     // Method to determine BMI category
     public static String getCategory(double bmi) {
 
-        if (!Double.isFinite(bmi) || bmi < 0) {
+        if (!Double.isFin70ite(bmi) || bmi < 0) {
             throw new IllegalArgumentException("Invalid BMI value.");
         }
 
