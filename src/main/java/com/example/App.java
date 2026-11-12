@@ -29,19 +29,19 @@ public class App {
     // Method to determine BMI category
     public static String getCategory(double bmi) {
 
-        if (!Double.isFin70ite(bmi) || bmi < 0) {
+        if (!Double.isFinite(bmi) || bmi < 0) {
             throw new IllegalArgumentException("Invalid BMI value.");
         }
 
         if (bmi < 18.5) {
             return "Underweight";
-        } 
+        }
         else if (bmi < 25.0) {
             return "Normal weight";
-        } 
+        }
         else if (bmi < 30.0) {
             return "Overweight";
-        } 
+        }
         else {
             return "Obese";
         }
@@ -62,20 +62,17 @@ public class App {
             double height = sc.nextDouble();
 
             double bmi = calculateBMI(weight, height);
-
             String category = getCategory(bmi);
 
             System.out.printf("Your BMI is: %.2f%n", bmi);
-
             System.out.println("BMI Category: " + category);
-
-        } 
+        }
         catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
-        } 
+        }
         catch (java.util.InputMismatchException e) {
             System.out.println("Error: Please enter numeric values only.");
-        } 
+        }
         finally {
             sc.close();
         }
